@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dummy</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
 <!doctype html>
@@ -25,8 +25,8 @@
       <div class="alert alert-success" role="alert">
         <p>Please sign up or login to book a seat. Thank you.</p>
         <hr>
-        <form action="flight_status.php" method="GET"> <!-- Changed action to flight_status.php -->
-          <input type="hidden" name="flight_id" value="<?php echo $_GET['flight_id']; ?>"> <!-- Add a hidden input field to include flight ID -->
+        <form action="flight_status.php" method="GET"> 
+          <input type="hidden" name="flight_id" value="<?php echo $_GET['flight_id']; ?>">
           <button type="submit" class="btn btn-outline-dark">Go Back</button>
         </form>
 

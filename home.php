@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
 <!doctype html>
@@ -44,7 +44,6 @@
             </div>
             <input type="date" class="form-control" name="departure_date" aria-label="Date" required>
           </div>
-          <!-- Advanced Filter: Price Range -->
           <div class="input-group mr-2">
             <div class="input-group-prepend">
               <span class="input-group-text">Price Range:</span>
@@ -56,26 +55,18 @@
         </form>
 
         <?php
-        // Establish connection to the database
         $conn = mysqli_connect("localhost", "root", "", "test_website");
-
-        // Check connection
         if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());
         }
-
-        // Check if form is submitted
         if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['departure_date'])) {
-            // Retrieve search criteria
             $departure_date = $_GET['departure_date'];
             $from_city = isset($_GET['from_city']) ? $_GET['from_city'] : '';
             $to_city = isset($_GET['to_city']) ? $_GET['to_city'] : '';
             $priceRange = isset($_GET['priceRange']) ? $_GET['priceRange'] : '';
 
-            // Construct SQL query
             $sql = "SELECT * FROM flights WHERE departure_date = '$departure_date'";
-            
-            // Add filters for from_city, to_city, and priceRange if they are provided
+
             if ($from_city !== '') {
                 $sql .= " AND from_city LIKE '%$from_city%'";
             }
@@ -86,22 +77,17 @@
                 $sql .= " AND price <= $priceRange";
             }
 
-            // Execute query
             $result = mysqli_query($conn, $sql);
 
-            // Check if any rows are returned
             if (mysqli_num_rows($result) > 0) {
-                // Output data of each row
                 echo "<div class='mt-4'>";
                 echo "<h3>Search Results:</h3>";
                 while ($row = mysqli_fetch_assoc($result)) {
                     ?>
-                    <!-- Form to view flight details -->
                     <form action="flight_status.php" method="GET">
                         <input type="hidden" name="flight_id" value="<?php echo $row['id']; ?>">
                         <div class="flight-info">
                             <p>Flight ID: <?php echo $row["id"]; ?> - From: <?php echo $row["from_city"]; ?> To: <?php echo $row["to_city"]; ?></p>
-                            <!-- Display more flight details here... -->
                             <button type="submit" class="btn btn-outline-dark">View Details</button>
                         </div>
                     </form>
@@ -113,7 +99,6 @@
             }
         }
 
-        // Close connection
         mysqli_close($conn);
         ?>
       </div>
