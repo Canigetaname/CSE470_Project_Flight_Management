@@ -22,12 +22,12 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['flight_id'])) {
         $flight_id = $_GET['flight_id'];
-        $sql = "SELECT * FROM flights WHERE id = $flight_id";
+        $sql = "SELECT * FROM flights WHERE flight_id = $flight_id";
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 0) {
             $flight = mysqli_fetch_assoc($result);
             echo "<h2>Flight Details</h2>";
-            echo "<p><strong>Flight ID:</strong> " . $flight["id"] . "</p>";
+            echo "<p><strong>Flight ID:</strong> " . $flight["flight_id"] . "</p>";
             echo "<p><strong>From:</strong> " . $flight["from_city"] . "</p>";
             echo "<p><strong>To:</strong> " . $flight["to_city"] . "</p>";
             echo "<p><strong>Departure Time:</strong> " . $flight["departure_time"] . "</p>";
@@ -54,7 +54,7 @@
 
             echo "<a href='home.php' class='btn btn-secondary mr-2'>Go Back</a>";
 
-            echo "<a href='dummy.php?flight_id=$flight_id' class='btn btn-primary'>Book Seats</a>";
+            echo "<a href='seat_booking.php?flight_id=$flight_id' class='btn btn-primary'>Book Seats</a>";
         } else {
             echo "<p>Flight not found.</p>";
         }

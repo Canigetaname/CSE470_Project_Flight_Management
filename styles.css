@@ -10,9 +10,48 @@ body {
     background-color: rgba(255, 255, 255, 0.8); 
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 0 10px rgba(44, 40, 40, 0.1); 
 }
 
 .alert {
     margin-bottom: 0; 
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Optional for vertical centering */
+  }
+  
+/* styles.css */
+
+/* Set consistent font */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Style labels */
+label {
+  display: block; /* Make labels occupy full width on smaller screens */
+  margin-bottom: 5px; /* Add space below labels */
+}
+
+/* Style input fields */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 250px; /* Set consistent width */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style button */
+button[type="submit"] {
+  background-color: #4CAF50; /* Green color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }

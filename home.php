@@ -85,9 +85,9 @@
                 while ($row = mysqli_fetch_assoc($result)) {
                     ?>
                     <form action="flight_status.php" method="GET">
-                        <input type="hidden" name="flight_id" value="<?php echo $row['id']; ?>">
+                        <input type="hidden" name="flight_id" value="<?php echo $row['flight_id']; ?>">
                         <div class="flight-info">
-                            <p>Flight ID: <?php echo $row["id"]; ?> - From: <?php echo $row["from_city"]; ?> To: <?php echo $row["to_city"]; ?></p>
+                            <p>Flight ID: <?php echo $row["flight_id"]; ?> - From: <?php echo $row["from_city"]; ?> To: <?php echo $row["to_city"]; ?></p>
                             <button type="submit" class="btn btn-outline-dark">View Details</button>
                         </div>
                     </form>

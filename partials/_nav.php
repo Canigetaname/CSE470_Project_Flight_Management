@@ -8,6 +8,9 @@ echo '<nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
+          <a class="nav-link" href="/cse470_website_start/show_bookings.php" style="font-weight: bold; font-size: 18px;">View all bookings</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="/cse470_website_start/signup.php" style="font-weight: bold; font-size: 18px;">Sign up</a>
         </li>
         <li class="nav-item">
