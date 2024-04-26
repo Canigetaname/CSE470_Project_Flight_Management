@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flights</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="top-bar">   
+    <div class="logo">
+        <a href="/">Flight System</a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/flights">Flights</a></li>
+        <li><a href="{{ url_for('profile') }}">Profile</a></li>
+        <li><a href="/discussion">Discussion</a></li>
+        <li><a href="{{ url_for('admin') }}">Admin</a></li>
+    </ul>
+</nav>
+
+    {% block content %}{% endblock %}
+    <footer>
+        <!-- Footer content here -->
+    </footer>
+</body>
+</html>
